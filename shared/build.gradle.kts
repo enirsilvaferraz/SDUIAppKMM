@@ -3,6 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("org.jetbrains.compose")
+    kotlin("plugin.serialization")
 }
 
 kotlin {
@@ -36,11 +37,17 @@ kotlin {
 
                 api("io.insert-koin:koin-core:3.2.0")
                 api("io.insert-koin:koin-test:3.2.0")
+
+                implementation(platform("org.jetbrains.kotlinx:kotlinx-serialization-bom:1.5.1"))
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json")
             }
         }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
+
+                implementation(platform("org.jetbrains.kotlinx:kotlinx-serialization-bom:1.5.1"))
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json")
             }
         }
         val androidMain by getting {

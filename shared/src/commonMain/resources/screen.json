@@ -1,0 +1,19 @@
+[
+  {
+    "pluginType": "N01",
+    "payload": {
+      "text": "Text 1"
+    }
+  },
+  {
+    "pluginType": "N02",
+    "plugins": [
+      {
+        "pluginType": "N01",
+        "payload": {
+          "text": "Text 2"
+        }
+      }
+    ]
+  }
+]
