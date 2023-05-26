@@ -32,10 +32,6 @@ fun App(
     usecase: SDUIUseCase = HelperKoin.getUseCase()
 ) {
 
-    println("Enir")
-    val json = HelperKoin.getJson()
-    println(json.decodeFromString<PayloadDefinition>( json.encodeToString(TextComponentPayload("A"))))
-
     MaterialTheme {
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             usecase.run().forEach { it: PluginDefinition<PayloadDefinition> ->
