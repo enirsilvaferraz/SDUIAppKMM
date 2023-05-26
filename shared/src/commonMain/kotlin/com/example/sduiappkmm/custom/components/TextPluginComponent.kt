@@ -7,14 +7,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sduiappkmm.core.PluginComponent
-import com.example.sduiappkmm.core.models.PayloadDefinition
 import com.example.sduiappkmm.core.models.PluginDefinition
-import com.example.sduiappkmm.custom.plugins.TextComponentPayload
+import com.example.sduiappkmm.custom.payloads.TextComponentPayload
 
-class TextPluginComponent : PluginComponent {
+class TextPluginComponent : PluginComponent<TextComponentPayload> {
 
     @Composable
-    override fun Build(plugin: PluginDefinition<PayloadDefinition>) {
-        Text(text = (plugin.payload as TextComponentPayload).text, fontSize = 20.sp, modifier = Modifier.padding(8.dp))
+    override fun Build(plugin: PluginDefinition<TextComponentPayload>) {
+        Text(text = plugin.payload.text, fontSize = 20.sp, modifier = Modifier.padding(8.dp))
     }
 }

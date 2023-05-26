@@ -1,7 +1,7 @@
-package com.example.sduiappkmm.custom.plugins
+package com.example.sduiappkmm.coreimpl.models
 
 import com.example.sduiappkmm.core.models.PayloadDefinition
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class TextComponentPayload(val text: String) : PayloadDefinition
+object EmptyPayload : PayloadDefinition

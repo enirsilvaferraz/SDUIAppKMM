@@ -6,4 +6,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @SerialName("deeplink-event")
-data class OpenDeeplinkEventDefinition(override val payload: OpenDeeplinkEventPayload) : EventDefinition<OpenDeeplinkEventPayload>
+data class OpenDeeplinkEventDefinition(
+    @SerialName("payload") override val payload: OpenDeeplinkEventPayload
+) : EventDefinition<OpenDeeplinkEventPayload>

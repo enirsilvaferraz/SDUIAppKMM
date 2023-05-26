@@ -6,19 +6,19 @@ import androidx.compose.material.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.sduiappkmm.core.Mapper
+import com.example.sduiappkmm.buildComponent
 import com.example.sduiappkmm.core.PluginComponent
-import com.example.sduiappkmm.core.models.PayloadDefinition
 import com.example.sduiappkmm.core.models.PluginDefinition
+import com.example.sduiappkmm.coreimpl.models.EmptyPayload
 
-class CardPluginComponent : PluginComponent {
+class CardPluginComponent : PluginComponent<EmptyPayload> {
 
     @Composable
-    override fun Build(plugin: PluginDefinition<PayloadDefinition>) {
+    override fun Build(plugin: PluginDefinition<EmptyPayload>) {
         Card(Modifier.padding(32.dp)) {
             Column {
                 plugin.plugins.forEach {
-                    Mapper.find(it::class)?.Build(it)
+                    it.buildComponent()
                 }
             }
         }

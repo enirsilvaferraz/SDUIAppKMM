@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import com.example.sduiappkmm.core.models.PayloadDefinition
 import com.example.sduiappkmm.core.models.PluginDefinition
 
-interface PluginComponent {
+interface PluginComponent<T : PayloadDefinition> {
 
     @Composable
-    fun Build(plugin: PluginDefinition<PayloadDefinition>)
+    fun Build(plugin: PluginDefinition<T>)
 }

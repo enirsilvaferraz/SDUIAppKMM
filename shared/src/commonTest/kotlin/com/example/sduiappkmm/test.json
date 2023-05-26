@@ -1,0 +1,3 @@
+//[{"type":"text-component","payload":{"text":"A"},"plugins":[{"type":"text-component2","payload":{"text":"B"},"plugins":[],"events":[]}],"events":[]}]
+
+{"type": "A"}
